@@ -144,6 +144,31 @@ void SysTick_Handler(void)
   TimingDelay_Decrement();
 }
 
+
+void EXTI15_10_IRQHandler(void) 
+{
+	
+	/*
+		OV2640 数据采集中断
+	*/
+	if (EXTI_GetITStatus(EXTI_Line10) != RESET)
+	{
+		
+		#define READ_VSYNC			(GPIOB->IDR & GPIO_Pin_8)  //GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_8)			//GPIO_Pin_8	????????
+		#define READ_PICLK			(GPIOB->IDR & GPIO_Pin_15) //GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_15)		//1			//GPIO_Pin_15 ?????GPIO_Pin_15
+		#define READ_HREF				(GPIOC->IDR & GPIO_Pin_13) //GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_13)		//1			//GPIO_Pin_15 ?????GPIO_Pin_15
+
+		#define READ_PA4				(GPIOA->IDR & GPIO_Pin_4)
+		
+		unsigned char tmp = (unsigned char)(GPIOB->IDR);
+		if (READ_HREF != 0)
+		{
+		}
+		EXTI_ClearITPendingBit(EXTI_Line10);
+		
+	} 
+}
+
 /******************************************************************************/
 /*                 STM32F4xx Peripherals Interrupt Handlers                   */
 /*  Add here the Interrupt Handler for the used peripheral(s) (PPP), for the  */

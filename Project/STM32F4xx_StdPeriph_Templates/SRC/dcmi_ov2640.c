@@ -1198,6 +1198,56 @@ extern void Exit_Init(GPIO_TypeDef* gpio_port,
 
 void OV2640_CaptureGpioInit(void)
 {
+		GPIO_InitTypeDef GPIO_InitStructure;
+  EXTI_InitTypeDef EXTI_InitStructure;
+  NVIC_InitTypeDef NVIC_InitStructure;
+	
+	
+	memset(&GPIO_InitStructure,0x0,sizeof(GPIO_InitStructure));
+	
+	RCC_APB2PeriphClockCmd(RCC_AHB1Periph_GPIOB,ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_AHB1Periph_GPIOC,ENABLE);
+	//RCC_APB2PeriphClockCmd(RCC_AHB1Periph_AFIO,ENABLE); 
+	//RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+	
+	GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15; 
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN; 
+	GPIO_Init(GPIOC, &GPIO_InitStructure); 
+	
+	
+	GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_8;						//VSYNC
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN; 
+	GPIO_Init(GPIOB, &GPIO_InitStructure); 
+	
+	GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_9; 					//HREF
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN; 
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
+	
+	GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_10;						//PCLK
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN; 
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
+	
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+	SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOB, EXTI_PinSource10);
+	
+	// Configure EXTI Line3 to generate an interrupt on falling edge
+	EXTI_InitStructure.EXTI_Line = EXTI_Line10;
+	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_TYPE;
+	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+	EXTI_Init(&EXTI_InitStructure);
+
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+ 
+	NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn; //PPP?????
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_Init(&NVIC_InitStructure);
 }
 
 void disable_href_isr(void)
