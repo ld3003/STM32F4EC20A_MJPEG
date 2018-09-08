@@ -27,6 +27,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include <stdio.h>
 
 /** @addtogroup Template_Project
   * @{
@@ -101,6 +102,43 @@ void USART2_Configuration(void)//
     USART_Cmd(USART2, ENABLE);//ך1?ü'??ת1
 }
 
+void USART1_Configuration(void)//
+{
+    GPIO_InitTypeDef  GPIO_InitStructure;
+    USART_InitTypeDef USART_InitStructure;
+		NVIC_InitTypeDef NVIC_InitStructure;
+	
+	
+		RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1,ENABLE);
+		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA,ENABLE);
+	
+		
+		/* Connect PXx to USARTx_Tx*/
+		GPIO_PinAFConfig(GPIOA, GPIO_PinSource9, GPIO_AF_USART1);
+
+  
+		/* Configure USART Tx as alternate function  */
+		GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+
+		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;
+		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+		GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+   
+    USART_InitStructure.USART_BaudRate = 115200;//יט??'??ת2¨ל??ך
+    USART_InitStructure.USART_WordLength = USART_WordLength_8b;//יט??ךy?Y??
+    USART_InitStructure.USART_StopBits = USART_StopBits_1;//יט??ם??1??
+    USART_InitStructure.USART_Parity = USART_Parity_No;//יט??D§?י??
+    USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;//יט??בק????
+    USART_InitStructure.USART_Mode = USART_Mode_Tx;//יט??1₪׳ק??ך?
+    USART_Init(USART1, &USART_InitStructure); //????ט??ב11ל?
+
+    USART_Cmd(USART1, ENABLE);//ך1?ü'??ת1
+}
+
+
 void UART2_send_byte(unsigned char byte)
 {
     USART_SendData(USART2, (uint8_t) byte);
@@ -110,6 +148,14 @@ void UART2_send_byte(unsigned char byte)
 		{} 
 }
 
+void UART1_send_byte(unsigned char byte)
+{
+    USART_SendData(USART1, (uint8_t) byte);
+
+		/* Loop until transmit data register is empty */
+		while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET)
+		{} 
+}
 
 /**
   * @brief  Main program
@@ -129,10 +175,15 @@ int main(void)
   /* SysTick end of count event each 10ms */
   RCC_GetClocksFreq(&RCC_Clocks);
   SysTick_Config(RCC_Clocks.HCLK_Frequency / 100);
+	USART1_Configuration();
 	USART2_Configuration();
+	
+	
+	
+	
 	for(;;)
 	{
-		
+		printf("ATAT\r\n");
 		UART2_send_byte('A');
 		UART2_send_byte('T');
 		UART2_send_byte('\r');
@@ -207,6 +258,18 @@ void TimingDelay_Decrement(void)
   { 
     uwTimingDelay--;
   }
+}
+
+int fputc(int ch, FILE *f)
+{
+	
+  USART_SendData(USART1, (uint8_t) ch);
+
+		/* Loop until transmit data register is empty */
+		while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET)
+		{} 
+
+  return ch;
 }
 
 #ifdef  USE_FULL_ASSERT
