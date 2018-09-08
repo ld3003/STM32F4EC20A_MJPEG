@@ -7,7 +7,10 @@ static void delay_us(unsigned int us)
 {
 	int len;
 	for (;us > 0; us --)
-     for (len = 0; len < 20; len++ );
+	{
+		for (len = 0; len < 20; len++ );
+		for (len = 0; len < 20; len++ );
+	}
 	//
 }
 

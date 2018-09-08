@@ -1202,44 +1202,10 @@ void OV2640_CaptureGpioInit(void)
 
 void disable_href_isr(void)
 {
-	EXTI_InitTypeDef EXTI_InitStructure;
-  NVIC_InitTypeDef NVIC_InitStructure;
-	
-	// Configure EXTI Line3 to generate an interrupt on falling edge
-	EXTI_InitStructure.EXTI_Line = EXTI_Line15;
-	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_TYPE;
-	EXTI_InitStructure.EXTI_LineCmd = DISABLE;
-	EXTI_Init(&EXTI_InitStructure);
-
-	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
- 
-	NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn; //PPP?????
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
-	NVIC_InitStructure.NVIC_IRQChannelCmd = DISABLE;
-	NVIC_Init(&NVIC_InitStructure);
 }
 
 void enable_href_isr(void)
 {
-	EXTI_InitTypeDef EXTI_InitStructure;
-  NVIC_InitTypeDef NVIC_InitStructure;
-	
-	// Configure EXTI Line3 to generate an interrupt on falling edge
-	EXTI_InitStructure.EXTI_Line = EXTI_Line15;
-	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_TYPE;
-	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-	EXTI_Init(&EXTI_InitStructure);
-
-	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
- 
-	NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn; //PPP?????
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
-	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-	NVIC_Init(&NVIC_InitStructure);
 }
 
 void OV2640_HW_Init(void)
@@ -2113,14 +2079,55 @@ void free_jpegbuffer(void)
 
 void ov2640_poweron(void)
 {
+	//PB11
+	
+	GPIO_InitTypeDef  GPIO_InitStructure;
+
+
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB,ENABLE);
+
+
+	/* Configure USART Tx as alternate function  */
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
+	
+	GPIO_SetBits(GPIOB,GPIO_Pin_11);
+
+	
 }
 void ov2640_poweroff(void)
 {
+	GPIO_InitTypeDef  GPIO_InitStructure;
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB,ENABLE);
+
+	/* Configure USART Tx as alternate function  */
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
+	
+	GPIO_ResetBits(GPIOB,GPIO_Pin_11);
 }
 
 
 void _config_mco(void)
 {
+	GPIO_InitTypeDef  GPIO_InitStructure;
+  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);//??PA
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;//PA8
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;//??????
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;//????
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;//50MHz
+  GPIO_Init(GPIOA, &GPIO_InitStructure);
+	RCC_MCO1Config(RCC_MCO1Source_HSE,RCC_MCO1Div_1);   //?????HSI,16M  2??
 }
 
 unsigned char check_ffd9(unsigned char *imgbuf , int imglen)

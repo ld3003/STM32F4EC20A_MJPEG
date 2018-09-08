@@ -1187,6 +1187,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>SRC</GroupName>
+          <Files>
+            <File>
+              <FileName>dcmi_ov2640.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\dcmi_ov2640.c</FilePath>
+            </File>
+            <File>
+              <FileName>SCCB.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\SCCB.c</FilePath>
+            </File>
+            <File>
+              <FileName>ov2640api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ov2640api.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -2372,6 +2392,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>SRC</GroupName>
+          <Files>
+            <File>
+              <FileName>dcmi_ov2640.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\dcmi_ov2640.c</FilePath>
+            </File>
+            <File>
+              <FileName>SCCB.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\SCCB.c</FilePath>
+            </File>
+            <File>
+              <FileName>ov2640api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ov2640api.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -2705,7 +2745,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx,USE_STM324xG_EVAL</Define>
               <Undefine></Undefine>
-              <IncludePath>..\;..\..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc;..\..\..\Utilities\STM32_EVAL\Common;..\..\..\Utilities\STM32_EVAL\STM3240_41_G_EVAL</IncludePath>
+              <IncludePath>..\;..\..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc;..\..\..\Utilities\STM32_EVAL\Common;..\..\..\Utilities\STM32_EVAL\STM3240_41_G_EVAL;..\SRC</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -3554,6 +3594,26 @@
               <FileName>stm32f4xx_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\stm32f4xx_it.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>SRC</GroupName>
+          <Files>
+            <File>
+              <FileName>dcmi_ov2640.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\dcmi_ov2640.c</FilePath>
+            </File>
+            <File>
+              <FileName>SCCB.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\SCCB.c</FilePath>
+            </File>
+            <File>
+              <FileName>ov2640api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ov2640api.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -4793,6 +4853,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>SRC</GroupName>
+          <Files>
+            <File>
+              <FileName>dcmi_ov2640.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\dcmi_ov2640.c</FilePath>
+            </File>
+            <File>
+              <FileName>SCCB.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\SCCB.c</FilePath>
+            </File>
+            <File>
+              <FileName>ov2640api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ov2640api.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -5978,6 +6058,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>SRC</GroupName>
+          <Files>
+            <File>
+              <FileName>dcmi_ov2640.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\dcmi_ov2640.c</FilePath>
+            </File>
+            <File>
+              <FileName>SCCB.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\SCCB.c</FilePath>
+            </File>
+            <File>
+              <FileName>ov2640api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ov2640api.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -7059,6 +7159,26 @@
               <FileName>stm32f4xx_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\stm32f4xx_it.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>SRC</GroupName>
+          <Files>
+            <File>
+              <FileName>dcmi_ov2640.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\dcmi_ov2640.c</FilePath>
+            </File>
+            <File>
+              <FileName>SCCB.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\SCCB.c</FilePath>
+            </File>
+            <File>
+              <FileName>ov2640api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ov2640api.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -8148,6 +8268,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>SRC</GroupName>
+          <Files>
+            <File>
+              <FileName>dcmi_ov2640.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\dcmi_ov2640.c</FilePath>
+            </File>
+            <File>
+              <FileName>SCCB.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\SCCB.c</FilePath>
+            </File>
+            <File>
+              <FileName>ov2640api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ov2640api.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -9180,6 +9320,26 @@
               <FileName>stm32f4xx_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\stm32f4xx_it.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>SRC</GroupName>
+          <Files>
+            <File>
+              <FileName>dcmi_ov2640.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\dcmi_ov2640.c</FilePath>
+            </File>
+            <File>
+              <FileName>SCCB.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\SCCB.c</FilePath>
+            </File>
+            <File>
+              <FileName>ov2640api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ov2640api.c</FilePath>
             </File>
           </Files>
         </Group>

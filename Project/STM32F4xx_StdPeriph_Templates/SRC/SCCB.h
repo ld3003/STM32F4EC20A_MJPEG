@@ -12,8 +12,4 @@ unsigned char sccbw(unsigned char reg,unsigned char data);
 unsigned char sccbr(unsigned char reg);
 
 
-unsigned char xsccbw(unsigned char reg,unsigned char data);
-unsigned char xsccbr(unsigned char reg);
-
-
 #endif /* _SCCB_H */

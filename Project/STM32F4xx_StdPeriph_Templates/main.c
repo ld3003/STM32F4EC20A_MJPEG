@@ -27,6 +27,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "ov2640api.h"
 #include <stdio.h>
 
 /** @addtogroup Template_Project
@@ -178,16 +179,11 @@ int main(void)
 	USART1_Configuration();
 	USART2_Configuration();
 	
-	
-	
+	ov2640_poweron();
+	ov2640_init();
 	
 	for(;;)
 	{
-		printf("ATAT\r\n");
-		UART2_send_byte('A');
-		UART2_send_byte('T');
-		UART2_send_byte('\r');
-		UART2_send_byte('\n');
 		
 		Delay(20);
 	}
