@@ -144,25 +144,28 @@ void SysTick_Handler(void)
   TimingDelay_Decrement();
 }
 
-
+#include "ov2640api.h"
 void EXTI15_10_IRQHandler(void) 
 {
 	
 	/*
 		OV2640 数据采集中断
 	*/
+	
 	if (EXTI_GetITStatus(EXTI_Line10) != RESET)
 	{
 		
-		#define READ_VSYNC			(GPIOB->IDR & GPIO_Pin_8)  //GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_8)			//GPIO_Pin_8	????????
-		#define READ_PICLK			(GPIOB->IDR & GPIO_Pin_15) //GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_15)		//1			//GPIO_Pin_15 ?????GPIO_Pin_15
-		#define READ_HREF				(GPIOC->IDR & GPIO_Pin_13) //GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_13)		//1			//GPIO_Pin_15 ?????GPIO_Pin_15
-
-		#define READ_PA4				(GPIOA->IDR & GPIO_Pin_4)
-		
-		unsigned char tmp = (unsigned char)(GPIOB->IDR);
+		#define READ_PICLK			(GPIOB->IDR & GPIO_Pin_10) //GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_15)		//1			//GPIO_Pin_15 ?????GPIO_Pin_15
+		#define READ_HREF				(GPIOB->IDR & GPIO_Pin_9) //GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_13)		//1			//GPIO_Pin_15 ?????GPIO_Pin_15
+		//#define TEST						
+		unsigned short tmp = (unsigned short)(GPIOC->IDR)>>8;
 		if (READ_HREF != 0)
 		{
+			
+			JpegBuffer[JpegDataCnt] = tmp;
+			if (JpegDataCnt < 102400)
+				JpegDataCnt ++ ;
+			
 		}
 		EXTI_ClearITPendingBit(EXTI_Line10);
 		

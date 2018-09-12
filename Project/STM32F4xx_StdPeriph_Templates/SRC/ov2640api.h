@@ -4,7 +4,7 @@
 
 //JPEG_BUFFER_LENGTH
 
-extern unsigned char *JpegBuffer;			//Í¼Æ¬»º³åÇø
+extern unsigned char JpegBuffer[];
 extern unsigned int JpegDataCnt;				//Í¼Æ¬»º³åÇø³¤¶È
 
 void alloc_jpegbuffer(void);

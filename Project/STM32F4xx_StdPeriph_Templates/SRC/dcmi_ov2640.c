@@ -981,7 +981,10 @@ const unsigned char OV2640_320x240_JPEG[][2]=
 	  */
 	  
 	 ////////////////
+	 
+	 
 	 //320*240
+	 #if 1
 	  0xff,      0x00,
       0xe0,      0x04,
       0xc0,      0xc8,
@@ -1000,6 +1003,8 @@ const unsigned char OV2640_320x240_JPEG[][2]=
       0xd3,      0x7F,
       0xe0,      0x00,
 	  ///////////////////
+		#endif
+		
 	  
   /*
 0xff,      0x00,
@@ -1020,8 +1025,9 @@ const unsigned char OV2640_320x240_JPEG[][2]=
       0xd3,      0x08,
       0xe0,      0x00
 */
-/*
-//640*480	  
+
+//640*480	
+#if 0
  	  0xff,      0x00,
       0xe0,      0x04,
       0xc0,      0xc8,
@@ -1039,7 +1045,7 @@ const unsigned char OV2640_320x240_JPEG[][2]=
       0x5c,      0x00,
       0xd3,      0x04,
       0xe0,      0x00
-	  */
+	 #endif
 	  /////////////////////
 	  /*
 	  //800*600
@@ -1172,6 +1178,142 @@ const unsigned char OV2640_352x288_JPEG[][2]=
   
 };
 
+/* JPG, 0x640x480 */
+const u8 ov2640_640x480_jpeg[][2]=
+{
+    0xff,  0x01,
+    0x11,  0x06,
+    0x12,  0x00,
+    0x17,  0x11,
+    0x18,  0x75,
+    0x32,  0x36,
+    0x19,  0x01,
+    0x1a,  0x97,
+    0x03,  0x0f,
+    0x37,  0x40,
+    0x4f,  0xbb,
+    0x50,  0x9c,
+    0x5a,  0x57,
+    0x6d,  0x80,
+    0x3d,  0x34,
+    0x39,  0x02,
+    0x35,  0x88,
+    0x22,  0x0a,
+    0x37,  0x40,
+    0x34,  0xa0,
+    0x06,  0x02,
+    0x0d,  0xb7,
+    0x0e,  0x01,
+
+    0xff,  0x00,
+    0xe0,  0x04,
+    0xc0,  0xc8,
+    0xc1,  0x96,
+    0x86,  0x3d,
+    0x50,  0x89,
+    0x51,  0x90,
+    0x52,  0x2c,
+    0x53,  0x00,
+    0x54,  0x00,
+    0x55,  0x88,
+    0x57,  0x00,
+    0x5a,  0xa0,
+    0x5b,  0x78,
+    0x5c,  0x00,
+    0xd3,  0x7f,
+    0xe0,  0x00,
+};
+
+/* JPG, 0x800x600 */
+const u8 ov2640_800x600_jpeg[][2]=
+{
+    0xff,  0x01,
+    0x11,  0x08,
+    0x12,  0x00,
+    0x17,  0x11,
+    0x18,  0x75,
+    0x32,  0x36,
+    0x19,  0x01,
+    0x1a,  0x97,
+    0x03,  0x0f,
+    0x37,  0x40,
+    0x4f,  0xbb,
+    0x50,  0x9c,
+    0x5a,  0x57,
+    0x6d,  0x80,
+    0x3d,  0x34,
+    0x39,  0x02,
+    0x35,  0x88,
+    0x22,  0x0a,
+    0x37,  0x40,
+    0x34,  0xa0,
+    0x06,  0x02,
+    0x0d,  0xb7,
+    0x0e,  0x01,
+
+    0xff,  0x00,
+    0xe0,  0x04,
+    0xc0,  0xc8,
+    0xc1,  0x96,
+    0x86,  0x35,
+    0x50,  0x89,
+    0x51,  0x90,
+    0x52,  0x2c,
+    0x53,  0x00,
+    0x54,  0x00,
+    0x55,  0x88,
+    0x57,  0x00,
+    0x5a,  0xc8,
+    0x5b,  0x96,
+    0x5c,  0x00,
+    0xd3,  0x7f,
+    0xe0,  0x00,
+};
+
+/* JPG, 0x1024x768 */
+const u8 ov2640_1024x768_jpeg[][2]=
+{
+    0xff,  0x01,
+    0x11,  0x0a,
+    0x12,  0x00,
+    0x17,  0x11,
+    0x18,  0x75,
+    0x32,  0x36,
+    0x19,  0x01,
+    0x1a,  0x97,
+    0x03,  0x0f,
+    0x37,  0x40,
+    0x4f,  0xbb,
+    0x50,  0x9c,
+    0x5a,  0x57,
+    0x6d,  0x80,
+    0x3d,  0x34,
+    0x39,  0x02,
+    0x35,  0x88,
+    0x22,  0x0a,
+    0x37,  0x40,
+    0x34,  0xa0,
+    0x06,  0x02,
+    0x0d,  0xb7,
+    0x0e,  0x01,
+
+    0xff,  0x00,
+    0xc0,  0xC8,
+    0xc1,  0x96,
+    0x8c,  0x00,
+    0x86,  0x3D,
+    0x50,  0x00,
+    0x51,  0x90,
+    0x52,  0x2C,
+    0x53,  0x00,
+    0x54,  0x00,
+    0x55,  0x88,
+    0x5a,  0x00,
+    0x5b,  0xC0,
+    0x5c,  0x01,
+    0xd3,  0x7f,
+};
+
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -1198,21 +1340,20 @@ extern void Exit_Init(GPIO_TypeDef* gpio_port,
 
 void OV2640_CaptureGpioInit(void)
 {
-		GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitTypeDef GPIO_InitStructure;
   EXTI_InitTypeDef EXTI_InitStructure;
   NVIC_InitTypeDef NVIC_InitStructure;
 	
 	
 	memset(&GPIO_InitStructure,0x0,sizeof(GPIO_InitStructure));
 	
-	RCC_APB2PeriphClockCmd(RCC_AHB1Periph_GPIOB,ENABLE);
-	RCC_APB2PeriphClockCmd(RCC_AHB1Periph_GPIOC,ENABLE);
-	//RCC_APB2PeriphClockCmd(RCC_AHB1Periph_AFIO,ENABLE); 
-	//RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB,ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC,ENABLE);
+
 	
-	GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15; 
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15; 
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN; 
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
 	GPIO_Init(GPIOC, &GPIO_InitStructure); 
 	
 	
@@ -1238,6 +1379,48 @@ void OV2640_CaptureGpioInit(void)
 	EXTI_InitStructure.EXTI_Line = EXTI_Line10;
 	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
 	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_TYPE;
+	EXTI_InitStructure.EXTI_LineCmd = DISABLE;
+	EXTI_Init(&EXTI_InitStructure);
+
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+ 
+	NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn; //PPP?????
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = DISABLE;
+	NVIC_Init(&NVIC_InitStructure);
+}
+
+void disable_href_isr(void)
+{
+	EXTI_InitTypeDef EXTI_InitStructure;
+  NVIC_InitTypeDef NVIC_InitStructure;
+	
+	// Configure EXTI Line3 to generate an interrupt on falling edge
+	EXTI_InitStructure.EXTI_Line = EXTI_Line10;
+	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_TYPE;
+	EXTI_InitStructure.EXTI_LineCmd = DISABLE;
+	EXTI_Init(&EXTI_InitStructure);
+
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+ 
+	NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn; //PPP?????
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = DISABLE;
+	NVIC_Init(&NVIC_InitStructure);
+}
+
+void enable_href_isr(void)
+{
+	EXTI_InitTypeDef EXTI_InitStructure;
+  NVIC_InitTypeDef NVIC_InitStructure;
+	
+	// Configure EXTI Line3 to generate an interrupt on falling edge
+	EXTI_InitStructure.EXTI_Line = EXTI_Line10;
+	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_TYPE;
 	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
 	EXTI_Init(&EXTI_InitStructure);
 
@@ -1248,14 +1431,6 @@ void OV2640_CaptureGpioInit(void)
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 	NVIC_Init(&NVIC_InitStructure);
-}
-
-void disable_href_isr(void)
-{
-}
-
-void enable_href_isr(void)
-{
 }
 
 void OV2640_HW_Init(void)
@@ -1717,7 +1892,7 @@ void OV2640_JPEGConfig(ImageFormat_TypeDef ImageFormat)
     {
       for(i=0; i<(sizeof(OV2640_352x288_JPEG)/2); i++)
       {
-        OV2640_WriteReg(OV2640_352x288_JPEG[i][0], OV2640_352x288_JPEG[i][1]);
+        OV2640_WriteReg(ov2640_640x480_jpeg[i][0], ov2640_640x480_jpeg[i][1]);
       }
       break;
     }
@@ -1924,64 +2099,22 @@ uint8_t OV2640_ReadReg(unsigned char Addr)
 	return sccbr(Addr);
 }
 
-
-
-u8 *JpegBuffer;
-//u8 *JpegBuffer;
-u32 JpegDataCnt = 0;
-
-
+#define READ_PICLK			(GPIOB->IDR & GPIO_Pin_10) //GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_15)		//1			//GPIO_Pin_15 ?????GPIO_Pin_15
+#define READ_HREF				(GPIOB->IDR & GPIO_Pin_9) //GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_13)		//1			//GPIO_Pin_15 ?????GPIO_Pin_15
 #define READ_VSYNC			(GPIOB->IDR & GPIO_Pin_8)  //GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_8)			//GPIO_Pin_8	????????
-#define READ_PICLK			(GPIOB->IDR & GPIO_Pin_15) //GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_15)		//1			//GPIO_Pin_15 ?????GPIO_Pin_15
 
-#ifdef SUPPORT_DOUBLE_WAKEUP
-#define READ_HREF				(GPIOC->IDR & GPIO_Pin_15) //GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_13)		//1			//GPIO_Pin_15 ?????GPIO_Pin_15
-#else
-#define READ_HREF				(GPIOC->IDR & GPIO_Pin_13) //GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_13)		//1			//GPIO_Pin_15 ?????GPIO_Pin_15
-#endif
-
-#define READ_PIC_HRE (GPIOB->IDR & 0xA000)
-
-//#define READ_PICLK			(~(READ_PICLK1 & READ_HREF))
-
-#define OV_READ_IMG_INTI				0
-#define OV_READ_IMG_VSYNC_LOW1	1
-#define OV_READ_IMG_VSYNC_LOW2	2
-#define OV_READ_IMG_VSYNC_HIGH	3
-#define OV_READ_IMG_WAIT_PICLK	4
-#define OV_READ_IMG_FINISH			5
-#define OV_READ_IMG_NULL				6
-#define OV_READ_IMG_VSYNC_LOW3	7
-
-
-#define READIMG_TIMEOUT_CNT			(1024 * 5)	//读取超时计数器
-
-extern void uart1_putchar(unsigned char data);
+extern void UART1_send_byte(unsigned char data);
 
 int ov2640_read(void)
 {
-	
+	int i;
 	NVIC_InitTypeDef NVIC_InitStructure;
 	
-	int ret = 0;
-	unsigned char READSTATSUS = OV_READ_IMG_INTI;
-	short i = 0;
-	char paizhaocnt = 0;
-	
-	//关闭SYSTICK
-	//SysTick->CTRL = 0;
-	//DISABLE_SYSTICK;
-	//DISABLE_IRQ;
-	
-	REREAD:
-	
-	paizhaocnt ++;
-	
-	if (paizhaocnt > 3){goto ERROR;}
+	SysTick->CTRL = 0; //关闭SYSTICK
+	//
 	
 	JpegDataCnt = 0;
-	READSTATSUS = OV_READ_IMG_INTI;
-	
+	disable_href_isr();
 	while(READ_VSYNC != 0)
 	{
 		//等待拉低
@@ -1994,10 +2127,13 @@ int ov2640_read(void)
 		//
 	}
 	
+	JpegDataCnt = 0;
 	enable_href_isr();
 	
 	while(READ_VSYNC != 0)
 	{
+
+		
 		//等待拉低
 		//
 	}
@@ -2005,75 +2141,22 @@ int ov2640_read(void)
 	//关闭中断
 	disable_href_isr();
 	
-	goto finish;
-	
-	
-	readbyte:
-	
-	if (READ_VSYNC == 0)
 	{
-		goto finish;
+		RCC_ClocksTypeDef RCC_Clocks;
+		RCC_GetClocksFreq(&RCC_Clocks);
+		SysTick_Config(RCC_Clocks.HCLK_Frequency / 100);
 	}
 	
-	wait2:
-	if ((READ_PICLK != 0) && (READ_HREF != 0))
-	//if (READ_PIC_HRE == 0xA000)
-	{
-		JpegBuffer[JpegDataCnt] = (u8)(GPIOB->IDR);
-		JpegDataCnt++;
-		
-		wait:
-		if ((READ_PICLK != 0)/* && (READ_HREF != 0)*/)
-		{
-			goto wait;
-		}
-		
-		goto readbyte;
-	}else{
-		goto readbyte;
-	}
-	
-	
-	finish:
-	
-	printf("JpegDataCnt = %d [%02x][%02x][%02x][%02x]\r\n",JpegDataCnt,JpegBuffer[0],JpegBuffer[1],JpegBuffer[JpegDataCnt-2],JpegBuffer[JpegDataCnt-1]);
-	
-	//debugbuf
-	
-	if ((JpegBuffer[0] == 0xFF) && (JpegBuffer[1] == 0xD8))
-	{
-		//
-	}
-	else
-	{
-		goto REREAD;
-	}
-	
-	if (JpegDataCnt < 1024)
-	{
-		goto REREAD;
-	}
-
-	
-	for(i = 0; i < JpegDataCnt; i ++)
-	{
-		//uart1_putchar(JpegBuffer[i]);
-	}
-	
+//	for(i = 0; i < JpegDataCnt; i ++)
+//	{
+//		UART1_send_byte(JpegBuffer[i]);
+//	}
+//	
 	//goto REREAD;
 	
 	printf("JpegDataCnt = %d\r\n",JpegDataCnt);
-	
-	//开启SYSTICK
-	//SysTick_Config(SystemCoreClock / 100);
-	//ENABLE_SYSTICK;
-	//ENABLE_IRQ;
-	
-	
+
 	return JpegDataCnt;
-	ERROR:
-	return -1;
-	
 
 }
 
@@ -2177,7 +2260,7 @@ void _config_mco(void)
   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;//????
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;//50MHz
   GPIO_Init(GPIOA, &GPIO_InitStructure);
-	RCC_MCO1Config(RCC_MCO1Source_HSE,RCC_MCO1Div_1);   //?????HSI,16M  2??
+	RCC_MCO1Config(RCC_MCO1Source_HSI,RCC_MCO1Div_1);   //?????HSI,16M  2??
 }
 
 unsigned char check_ffd9(unsigned char *imgbuf , int imglen)

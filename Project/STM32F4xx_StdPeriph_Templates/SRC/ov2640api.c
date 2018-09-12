@@ -1,6 +1,9 @@
 #include "ov2640api.h"
 #include "dcmi_ov2640.h"
+#include "stm32f4xx.h"
 
+unsigned char JpegBuffer[1024*100];
+unsigned int JpegDataCnt = 0;
 
 const unsigned char JPEG_HEADER_DAT[] =
 {

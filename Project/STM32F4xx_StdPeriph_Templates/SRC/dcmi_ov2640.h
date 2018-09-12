@@ -179,7 +179,6 @@ void ov2640_power_on(char on);
 void ov2640_flashlight_power(char on);
 void getimg(void);
 
-#define JPEG_BUFFER_LENGTH (1024*12 + 512)
 extern unsigned int JpegDataCnt;
 
 

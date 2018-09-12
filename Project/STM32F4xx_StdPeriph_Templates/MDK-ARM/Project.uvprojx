@@ -1204,6 +1204,16 @@
               <FileType>1</FileType>
               <FilePath>..\SRC\ov2640api.c</FilePath>
             </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>ec20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ec20.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2408,6 +2418,16 @@
               <FileName>ov2640api.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SRC\ov2640api.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>ec20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ec20.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -3614,6 +3634,16 @@
               <FileName>ov2640api.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SRC\ov2640api.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>ec20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ec20.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -4870,6 +4900,16 @@
               <FileType>1</FileType>
               <FilePath>..\SRC\ov2640api.c</FilePath>
             </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>ec20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ec20.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -6075,6 +6115,16 @@
               <FileType>1</FileType>
               <FilePath>..\SRC\ov2640api.c</FilePath>
             </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>ec20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ec20.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -7179,6 +7229,16 @@
               <FileName>ov2640api.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SRC\ov2640api.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>ec20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ec20.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -8285,6 +8345,16 @@
               <FileType>1</FileType>
               <FilePath>..\SRC\ov2640api.c</FilePath>
             </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>ec20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ec20.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -9340,6 +9410,16 @@
               <FileName>ov2640api.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SRC\ov2640api.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>ec20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SRC\ec20.c</FilePath>
             </File>
           </Files>
         </Group>
